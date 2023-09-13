@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
+        options.TokenValidationParameters.ValidIssuer = "https://login.microsoftonline.com/a1c5bee8-9e19-44cb-9f07-b94b279890ab/v2.0";
         options.Audience = "41e97338-28de-4668-99f0-7ae267d1a698";
         options.Authority = "https://login.microsoftonline.com/a1c5bee8-9e19-44cb-9f07-b94b279890ab";
     });
